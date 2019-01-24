@@ -6,7 +6,7 @@
 //  Copyright © 2019 Blackbelt Labs. All rights reserved.
 //
 
-#import <Cocoa/Cocoa.h>
+@import Foundation;
 
 //! Project version number for DirectoryWatcher.
 FOUNDATION_EXPORT double DirectoryWatcherVersionNumber;
