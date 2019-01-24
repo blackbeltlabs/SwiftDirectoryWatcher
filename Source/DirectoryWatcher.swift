@@ -52,12 +52,12 @@ public class DirectoryWatcher {
     
     let dispatchSource = DispatchSource.makeFileSystemObjectSource(fileDescriptor: dirFD, eventMask: .write, queue: DispatchQueue.main)
     
-    dispatchSource.setEventHandler {[unowned self] in
-      self.handleChangeEvent()
+    dispatchSource.setEventHandler {[weak self] in
+      self?.handleChangeEvent()
     }
     
-    dispatchSource.setCancelHandler {[unowned self] in
-      self.dirFD = -1
+    dispatchSource.setCancelHandler {[weak self] in
+      self?.dirFD = -1
     }
     
     self.dispatchSource = dispatchSource
