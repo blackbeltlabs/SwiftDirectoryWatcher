@@ -32,6 +32,10 @@ public class DirectoryWatcher {
     }
   }
   
+  public var isRunning: Bool {
+    return dirFD != -1
+  }
+  
   private var dispatchSource : DispatchSourceFileSystemObject?
   
   public init(url: URL) {
@@ -43,6 +47,10 @@ public class DirectoryWatcher {
   }
   
   @discardableResult public func start() -> Bool {
+    if isRunning {
+      return false
+    }
+    
     lastFiles = currentFiles
     
     dirFD = open(path, O_EVTONLY)
