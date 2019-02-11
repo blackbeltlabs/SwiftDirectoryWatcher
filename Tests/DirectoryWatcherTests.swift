@@ -7,23 +7,49 @@
 //
 
 import XCTest
+import Cocoa
+
 @testable import DirectoryWatcher
 
 class DirectoryWatcherTests: XCTestCase {
   var watcher: DirectoryWatcher!
+  var changeExpectation: XCTestExpectation!
+  lazy var directoryURL = FileManager.default.urls(for: .cachesDirectory, in: .userDomainMask).first!
+  lazy var fileURL = directoryURL.appendingPathComponent("test.txt")
   
-    override func setUp() {
-      let url = FileManager.default.urls(for: .cachesDirectory, in: .userDomainMask).first!
-      watcher = DirectoryWatcher(url: url)
-    }
+  override func setUp() {
+    watcher = DirectoryWatcher(url: directoryURL)
+    try? FileManager.default.removeItem(at: fileURL)
+  }
+  
+  override func tearDown() {
+    
+  }
+  
+  func testDirectoryWatcher() {
+    watcher.start()
+    
+    watcher.delegate = self
+    
+    changeExpectation = XCTestExpectation(description: "Wait for changes.")
+    
+    let task = Process()
+    task.launchPath = "/usr/bin/touch"
+    task.arguments = [fileURL.path]
+    task.launch()
+    
+    wait(for: [changeExpectation], timeout: 10)
+  }
+}
 
-    override func tearDown() {
-      
+extension DirectoryWatcherTests: DirectoryWatcherDelegate {
+  func directoryWatcher(_ watcher: DirectoryWatcher, changed: DirectoryChangeSet) {
+    guard let newFile = changed.newFiles.first else {
+      return
     }
-
-    func testDirectoryWatcher() {
-      watcher.start()
-      watcher.stop()
-      XCTAssert(true)
+    
+    if newFile == fileURL {
+      changeExpectation.fulfill()
     }
+  }
 }

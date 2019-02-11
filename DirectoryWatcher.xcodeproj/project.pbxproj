@@ -15,7 +15,7 @@
 		ACCA1D8321FA07C100752FE8 /* DirectoryWatcher.h in Headers */ = {isa = PBXBuildFile; fileRef = ACCA1D7D21FA07C100752FE8 /* DirectoryWatcher.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		ACCA1D8421FA07C100752FE8 /* DirectoryWatcher.h in Headers */ = {isa = PBXBuildFile; fileRef = ACCA1D7D21FA07C100752FE8 /* DirectoryWatcher.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		ACCA1D8C21FA083900752FE8 /* DirectoryWatcherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACCA1D8A21FA082A00752FE8 /* DirectoryWatcherTests.swift */; };
-		ACCA1D8D21FA083A00752FE8 /* DirectoryWatcherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACCA1D8A21FA082A00752FE8 /* DirectoryWatcherTests.swift */; };
+		ACD13DA32211A0D300AE3C8B /* DirectoryWatcherTestsiOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD13DA22211A0D300AE3C8B /* DirectoryWatcherTestsiOS.swift */; };
 		ACF7889821F9921000BB017E /* DirectoryWatcher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACF7888421F98EC100BB017E /* DirectoryWatcher.framework */; };
 /* End PBXBuildFile section */
 
@@ -44,6 +44,7 @@
 		ACCA1D7E21FA07C100752FE8 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ACCA1D8A21FA082A00752FE8 /* DirectoryWatcherTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectoryWatcherTests.swift; sourceTree = "<group>"; };
 		ACCA1D8B21FA082A00752FE8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ACD13DA22211A0D300AE3C8B /* DirectoryWatcherTestsiOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectoryWatcherTestsiOS.swift; sourceTree = "<group>"; };
 		ACF7888421F98EC100BB017E /* DirectoryWatcher.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DirectoryWatcher.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACF7889321F9921000BB017E /* DirectoryWatcher iOS Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "DirectoryWatcher iOS Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -116,6 +117,7 @@
 			isa = PBXGroup;
 			children = (
 				ACCA1D8A21FA082A00752FE8 /* DirectoryWatcherTests.swift */,
+				ACD13DA22211A0D300AE3C8B /* DirectoryWatcherTestsiOS.swift */,
 				ACCA1D8B21FA082A00752FE8 /* Info.plist */,
 			);
 			path = Tests;
@@ -321,7 +323,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ACCA1D8D21FA083A00752FE8 /* DirectoryWatcherTests.swift in Sources */,
+				ACD13DA32211A0D300AE3C8B /* DirectoryWatcherTestsiOS.swift in Sources */,
 				ACCA1D8221FA07C100752FE8 /* DirectoryWatcher.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
