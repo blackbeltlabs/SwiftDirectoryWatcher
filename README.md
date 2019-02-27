@@ -1,6 +1,9 @@
 # Swift DirectoryWatcher
 
-[![Build Status](https://travis-ci.org/mirkokiefer/SwiftDirectoryWatcher.svg?branch=master)](https://travis-ci.org/mirkokiefer/SwiftDirectoryWatcher)
+[![CI Status](https://img.shields.io/travis/mirkokiefer/SwiftDirectoryWatcher.svg?style=flat)](https://travis-ci.org/mirkokiefer/SwiftDirectoryWatcher)
+[![Version](https://img.shields.io/cocoapods/v/SwiftDirectoryWatcher.svg?style=flat)](https://cocoapods.org/pods/SwiftDirectoryWatcher)
+[![License](https://img.shields.io/cocoapods/l/SwiftDirectoryWatcher.svg?style=flat)](https://cocoapods.org/pods/SwiftDirectoryWatcher)
+[![Platform](https://img.shields.io/cocoapods/p/SwiftDirectoryWatcher.svg?style=flat)](https://cocoapods.org/pods/SwiftDirectoryWatcher)
 
 Directory watcher for iOS and macOS written in Swift.
 
