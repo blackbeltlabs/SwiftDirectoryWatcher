@@ -33,10 +33,12 @@ class DirectoryWatcherTests: XCTestCase {
     
     changeExpectation = XCTestExpectation(description: "Wait for changes.")
     
-    let task = Process()
-    task.launchPath = "/usr/bin/touch"
-    task.arguments = [fileURL.path]
-    task.launch()
+    DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+      let task = Process()
+      task.launchPath = "/usr/bin/touch"
+      task.arguments = [self.fileURL.path]
+      task.launch()
+    }
     
     wait(for: [changeExpectation], timeout: 10)
   }
