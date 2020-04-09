@@ -8,6 +8,11 @@ public struct DirectoryChangeSet {
 
 public protocol DirectoryWatcherDelegate {
   func directoryWatcher(_ watcher: DirectoryWatcher, changed: DirectoryChangeSet)
+  func directoryWatcher(_ watcher: DirectoryWatcher, error: Error)
+}
+
+public extension DirectoryWatcherDelegate {
+  func directoryWatcher(_ watcher: DirectoryWatcher, error: Error) {}
 }
 
 public class DirectoryWatcher {
@@ -15,11 +20,7 @@ public class DirectoryWatcher {
   public var url: URL
   var lastFiles: [URL] = []
   var currentFiles: [URL] {
-    return try! FileManager.default.contentsOfDirectory(
-      at: url,
-      includingPropertiesForKeys: [.creationDateKey, .typeIdentifierKey],
-      options: [.skipsHiddenFiles]
-    )
+    getCurrentFiles()
   }
   
   var path: String { return url.path }
@@ -60,11 +61,17 @@ public class DirectoryWatcher {
     
     let dispatchSource = DispatchSource.makeFileSystemObjectSource(fileDescriptor: dirFD, eventMask: .write, queue: DispatchQueue.main)
     
-    dispatchSource.setEventHandler {[weak self] in
-      self?.handleChangeEvent()
+    dispatchSource.setEventHandler { [weak self] in
+      guard let self = self else { return }
+      
+      do {
+        try self.handleChangeEvent()
+      } catch {
+        self.delegate?.directoryWatcher(self, error: error)
+      }
     }
     
-    dispatchSource.setCancelHandler {[weak self] in
+    dispatchSource.setCancelHandler { [weak self] in
       self?.dirFD = -1
     }
     
@@ -86,10 +93,23 @@ public class DirectoryWatcher {
     self.dispatchSource = nil
   }
   
-  func handleChangeEvent() {
+  func getCurrentFiles() -> [URL] {
+    do {
+      return try FileManager.default.contentsOfDirectory(
+        at: url,
+        includingPropertiesForKeys: [.creationDateKey, .typeIdentifierKey],
+        options: [.skipsHiddenFiles]
+      )
+    } catch {
+      delegate?.directoryWatcher(self, error: error)
+      return []
+    }
+  }
+  
+  func handleChangeEvent() throws {
     let currentFiles = self.currentFiles
-    let newFiles = listNewFiles(lastFiles: lastFiles, currentFiles: currentFiles)
-    let deletedFiles = listDeletedFiles(lastFiles: lastFiles, currentFiles: currentFiles)
+    let newFiles = try listNewFiles(lastFiles: lastFiles, currentFiles: currentFiles)
+    let deletedFiles = try listDeletedFiles(lastFiles: lastFiles, currentFiles: currentFiles)
     
     let changes = DirectoryChangeSet(newFiles: newFiles, deletedFiles: deletedFiles)
     delegate?.directoryWatcher(self, changed: changes)
@@ -97,19 +117,21 @@ public class DirectoryWatcher {
     lastFiles = currentFiles
   }
   
-  func listNewFiles(lastFiles: [URL], currentFiles: [URL]) -> [URL] {
-    return createDiff(left: currentFiles, right: lastFiles)
+  func listNewFiles(lastFiles: [URL], currentFiles: [URL]) throws -> [URL] {
+    try createDiff(left: currentFiles, right: lastFiles)
   }
   
-  func listDeletedFiles(lastFiles: [URL], currentFiles: [URL]) -> [URL] {
-    return createDiff(left: lastFiles, right: currentFiles)
+  func listDeletedFiles(lastFiles: [URL], currentFiles: [URL]) throws -> [URL] {
+    try createDiff(left: lastFiles, right: currentFiles)
   }
   
-  func createDiff(left: [URL], right: [URL]) -> [URL] {
-    return Set(left).subtracting(right).sorted { (url1, url2) -> Bool in
-      let date1 = try! url1.resourceValues(forKeys: [.creationDateKey]).creationDate!
-      let date2 = try! url2.resourceValues(forKeys: [.creationDateKey]).creationDate!
-      return date1 > date2
-    }
+  func createDiff(left: [URL], right: [URL]) throws -> [URL] {
+    try Set(left).subtracting(right).sorted { try $0.creationDate() > $1.creationDate() }
+  }
+}
+
+private extension URL {
+  func creationDate() throws -> Date {
+    try resourceValues(forKeys: [.creationDateKey]).creationDate ?? .distantPast
   }
 }
