@@ -102,8 +102,8 @@ public class DirectoryWatcher {
       )
     } catch {
       delegate?.directoryWatcher(self, error: error)
+      return []
     }
-    return []
   }
   
   func handleChangeEvent() throws {
@@ -132,6 +132,6 @@ public class DirectoryWatcher {
 
 private extension URL {
   func creationDate() throws -> Date {
-    try resourceValues(forKeys: [.creationDateKey]).creationDate ?? .distantPast
+    try resourceValues(forKeys: [.creationDateKey]).creationDate
   }
 }
