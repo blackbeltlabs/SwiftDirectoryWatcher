@@ -132,6 +132,6 @@ public class DirectoryWatcher {
 
 private extension URL {
   func creationDate() throws -> Date {
-    try resourceValues(forKeys: [.creationDateKey]).creationDate
+    try resourceValues(forKeys: [.creationDateKey]).creationDate ?? .distantPast
   }
 }
