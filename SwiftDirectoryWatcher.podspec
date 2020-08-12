@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |spec|
   spec.name         = "SwiftDirectoryWatcher"
-  spec.version      = "0.0.7"
+  spec.version      = "0.0.8"
   spec.summary      = "Directory watcher for iOS and macOS written in Swift."
 
   spec.description  = <<-DESC
@@ -22,7 +22,7 @@ Pod::Spec.new do |spec|
 
   spec.author       = { "Mirko Kiefer" => "mail@mirkokiefer.com" }
 
-  spec.swift_version = "4.2"
+  spec.swift_version = "5.0"
 
   spec.ios.deployment_target = "11.0"
 
