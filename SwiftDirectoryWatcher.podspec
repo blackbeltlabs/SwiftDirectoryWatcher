@@ -16,7 +16,7 @@ Pod::Spec.new do |spec|
   The module handles the identification of created and deleted files by diffing the folder content.
                    DESC
 
-  spec.homepage     = "https://github.com/mirkokiefer/SwiftDirectoryWatcher"
+  spec.homepage     = "https://github.com/blackbeltlabs/SwiftDirectoryWatcher"
 
   spec.license      = "MIT"
 
@@ -28,7 +28,7 @@ Pod::Spec.new do |spec|
 
   spec.osx.deployment_target = "10.13"
 
-  spec.source = { :git => "https://github.com/mirkokiefer/SwiftDirectoryWatcher.git", :tag => spec.version }
+  spec.source = { :git => "https://github.com/blackbeltlabs/SwiftDirectoryWatcher.git", :tag => spec.version }
 
   spec.source_files = "Source/*.swift"
 end
