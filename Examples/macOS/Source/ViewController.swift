@@ -7,7 +7,7 @@
 //
 
 import Cocoa
-import DirectoryWatcher
+import SwiftDirectoryWatcher
 
 class ViewController: NSViewController {
   lazy var url = FileManager.default.urls(for: .desktopDirectory, in: .userDomainMask).first!

@@ -5,9 +5,6 @@
       location = "group:DirectoryWatcher.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:Examples/iOS/iOS Example.xcodeproj">
-   </FileRef>
-   <FileRef
       location = "group:Examples/macOS/macOS Example.xcodeproj">
    </FileRef>
 </Workspace>

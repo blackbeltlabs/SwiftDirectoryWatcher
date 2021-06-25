@@ -8,12 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		ACB325A221F93AB8003723D6 /* DirectoryWatcher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACB3259821F93AB8003723D6 /* DirectoryWatcher.framework */; };
-		ACCA1D7F21FA07C100752FE8 /* DirectoryWatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACCA1D7C21FA07C100752FE8 /* DirectoryWatcher.swift */; };
-		ACCA1D8021FA07C100752FE8 /* DirectoryWatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACCA1D7C21FA07C100752FE8 /* DirectoryWatcher.swift */; };
-		ACCA1D8121FA07C100752FE8 /* DirectoryWatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACCA1D7C21FA07C100752FE8 /* DirectoryWatcher.swift */; };
-		ACCA1D8221FA07C100752FE8 /* DirectoryWatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACCA1D7C21FA07C100752FE8 /* DirectoryWatcher.swift */; };
-		ACCA1D8321FA07C100752FE8 /* DirectoryWatcher.h in Headers */ = {isa = PBXBuildFile; fileRef = ACCA1D7D21FA07C100752FE8 /* DirectoryWatcher.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		ACCA1D8421FA07C100752FE8 /* DirectoryWatcher.h in Headers */ = {isa = PBXBuildFile; fileRef = ACCA1D7D21FA07C100752FE8 /* DirectoryWatcher.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		ACCA1D8C21FA083900752FE8 /* DirectoryWatcherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACCA1D8A21FA082A00752FE8 /* DirectoryWatcherTests.swift */; };
 		ACD13DA32211A0D300AE3C8B /* DirectoryWatcherTestsiOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD13DA22211A0D300AE3C8B /* DirectoryWatcherTestsiOS.swift */; };
 		ACF7889821F9921000BB017E /* DirectoryWatcher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACF7888421F98EC100BB017E /* DirectoryWatcher.framework */; };
@@ -39,9 +33,6 @@
 /* Begin PBXFileReference section */
 		ACB3259821F93AB8003723D6 /* DirectoryWatcher.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DirectoryWatcher.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACB325A121F93AB8003723D6 /* DirectoryWatcher macOS Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "DirectoryWatcher macOS Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		ACCA1D7C21FA07C100752FE8 /* DirectoryWatcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DirectoryWatcher.swift; sourceTree = "<group>"; };
-		ACCA1D7D21FA07C100752FE8 /* DirectoryWatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DirectoryWatcher.h; sourceTree = "<group>"; };
-		ACCA1D7E21FA07C100752FE8 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ACCA1D8A21FA082A00752FE8 /* DirectoryWatcherTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectoryWatcherTests.swift; sourceTree = "<group>"; };
 		ACCA1D8B21FA082A00752FE8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ACD13DA22211A0D300AE3C8B /* DirectoryWatcherTestsiOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectoryWatcherTestsiOS.swift; sourceTree = "<group>"; };
@@ -86,7 +77,6 @@
 		ACB3258E21F93AB8003723D6 = {
 			isa = PBXGroup;
 			children = (
-				ACCA1D7B21FA07C100752FE8 /* Source */,
 				ACCA1D8921FA082900752FE8 /* Tests */,
 				ACB3259921F93AB8003723D6 /* Products */,
 			);
@@ -101,16 +91,6 @@
 				ACF7889321F9921000BB017E /* DirectoryWatcher iOS Tests.xctest */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		ACCA1D7B21FA07C100752FE8 /* Source */ = {
-			isa = PBXGroup;
-			children = (
-				ACCA1D7C21FA07C100752FE8 /* DirectoryWatcher.swift */,
-				ACCA1D7D21FA07C100752FE8 /* DirectoryWatcher.h */,
-				ACCA1D7E21FA07C100752FE8 /* Info.plist */,
-			);
-			path = Source;
 			sourceTree = "<group>";
 		};
 		ACCA1D8921FA082900752FE8 /* Tests */ = {
@@ -130,7 +110,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ACCA1D8321FA07C100752FE8 /* DirectoryWatcher.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,7 +117,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ACCA1D8421FA07C100752FE8 /* DirectoryWatcher.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -298,7 +276,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ACCA1D7F21FA07C100752FE8 /* DirectoryWatcher.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -307,7 +284,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				ACCA1D8C21FA083900752FE8 /* DirectoryWatcherTests.swift in Sources */,
-				ACCA1D8021FA07C100752FE8 /* DirectoryWatcher.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -315,7 +291,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ACCA1D8121FA07C100752FE8 /* DirectoryWatcher.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -324,7 +299,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				ACD13DA32211A0D300AE3C8B /* DirectoryWatcherTestsiOS.swift in Sources */,
-				ACCA1D8221FA07C100752FE8 /* DirectoryWatcher.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -396,7 +370,6 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = Source/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
@@ -457,7 +430,6 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = Source/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				MTL_ENABLE_DEBUG_INFO = NO;
@@ -527,7 +499,6 @@
 		ACB325B021F93AB8003723D6 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_IDENTITY = "";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = "";
@@ -547,7 +518,6 @@
 		ACB325B121F93AB8003723D6 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_IDENTITY = "";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = "";
@@ -616,7 +586,6 @@
 		ACF7889C21F9921000BB017E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_IDENTITY = "";
 				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -635,7 +604,6 @@
 		ACF7889D21F9921000BB017E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_IDENTITY = "";
 				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (

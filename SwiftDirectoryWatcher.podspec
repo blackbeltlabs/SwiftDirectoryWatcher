@@ -30,5 +30,5 @@ Pod::Spec.new do |spec|
 
   spec.source = { :git => "https://github.com/blackbeltlabs/SwiftDirectoryWatcher.git", :tag => spec.version }
 
-  spec.source_files = "Source/*.swift"
+  spec.source_files = "Sources/SwiftDirectoryWatcher/*.swift"
 end

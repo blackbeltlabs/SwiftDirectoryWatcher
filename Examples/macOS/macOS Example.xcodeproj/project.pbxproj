@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -11,8 +11,8 @@
 		ACCA1D6321FA030D00752FE8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ACCA1D5C21FA030D00752FE8 /* Assets.xcassets */; };
 		ACCA1D6421FA030D00752FE8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACCA1D5D21FA030D00752FE8 /* Main.storyboard */; };
 		ACCA1D6521FA030D00752FE8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACCA1D5F21FA030D00752FE8 /* AppDelegate.swift */; };
-		ACCA1D7621FA037500752FE8 /* DirectoryWatcher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACCA1D6F21FA036C00752FE8 /* DirectoryWatcher.framework */; };
-		ACCA1D7721FA037500752FE8 /* DirectoryWatcher.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = ACCA1D6F21FA036C00752FE8 /* DirectoryWatcher.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		B9F64BF62685F7F8000D30A5 /* SwiftDirectoryWatcher in Frameworks */ = {isa = PBXBuildFile; productRef = B9F64BF52685F7F8000D30A5 /* SwiftDirectoryWatcher */; };
+		B9F64BF72685F7F8000D30A5 /* SwiftDirectoryWatcher in Embed Frameworks */ = {isa = PBXBuildFile; productRef = B9F64BF52685F7F8000D30A5 /* SwiftDirectoryWatcher */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,23 +44,16 @@
 			remoteGlobalIDString = ACF7889321F9921000BB017E;
 			remoteInfo = "DirectoryWatcher iOS Tests";
 		};
-		ACCA1D7821FA037500752FE8 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = ACCA1D6721FA036C00752FE8 /* DirectoryWatcher.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = ACB3259721F93AB8003723D6;
-			remoteInfo = "DirectoryWatcher macOS";
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		ACCA1D7A21FA037500752FE8 /* Embed Frameworks */ = {
+		B9F64BF82685F7F8000D30A5 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				ACCA1D7721FA037500752FE8 /* DirectoryWatcher.framework in Embed Frameworks */,
+				B9F64BF72685F7F8000D30A5 /* SwiftDirectoryWatcher in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -76,6 +69,7 @@
 		ACCA1D6021FA030D00752FE8 /* macOS_Example.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = macOS_Example.entitlements; sourceTree = "<group>"; };
 		ACCA1D6121FA030D00752FE8 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ACCA1D6721FA036C00752FE8 /* DirectoryWatcher.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = DirectoryWatcher.xcodeproj; path = ../../DirectoryWatcher.xcodeproj; sourceTree = "<group>"; };
+		B9F64BF32685F7CC000D30A5 /* SwiftDirectoryWatcher */ = {isa = PBXFileReference; lastKnownFileType = folder; name = SwiftDirectoryWatcher; path = ../../..; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,7 +77,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ACCA1D7621FA037500752FE8 /* DirectoryWatcher.framework in Frameworks */,
+				B9F64BF62685F7F8000D30A5 /* SwiftDirectoryWatcher in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -96,6 +90,7 @@
 				ACCA1D6721FA036C00752FE8 /* DirectoryWatcher.xcodeproj */,
 				ACCA1D5A21FA030D00752FE8 /* Source */,
 				ACCA1D4821FA02E100752FE8 /* Products */,
+				B9F64BF42685F7F8000D30A5 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -110,6 +105,7 @@
 		ACCA1D5A21FA030D00752FE8 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				B9F64BF32685F7CC000D30A5 /* SwiftDirectoryWatcher */,
 				ACCA1D5B21FA030D00752FE8 /* ViewController.swift */,
 				ACCA1D5C21FA030D00752FE8 /* Assets.xcassets */,
 				ACCA1D5D21FA030D00752FE8 /* Main.storyboard */,
@@ -131,6 +127,13 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		B9F64BF42685F7F8000D30A5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -141,14 +144,16 @@
 				ACCA1D4321FA02E100752FE8 /* Sources */,
 				ACCA1D4421FA02E100752FE8 /* Frameworks */,
 				ACCA1D4521FA02E100752FE8 /* Resources */,
-				ACCA1D7A21FA037500752FE8 /* Embed Frameworks */,
+				B9F64BF82685F7F8000D30A5 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				ACCA1D7921FA037500752FE8 /* PBXTargetDependency */,
 			);
 			name = "macOS Example";
+			packageProductDependencies = (
+				B9F64BF52685F7F8000D30A5 /* SwiftDirectoryWatcher */,
+			);
 			productName = "macOS Example";
 			productReference = ACCA1D4721FA02E100752FE8 /* macOS Example.app */;
 			productType = "com.apple.product-type.application";
@@ -251,14 +256,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		ACCA1D7921FA037500752FE8 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "DirectoryWatcher macOS";
-			targetProxy = ACCA1D7821FA037500752FE8 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		ACCA1D5D21FA030D00752FE8 /* Main.storyboard */ = {
@@ -390,12 +387,10 @@
 		ACCA1D5821FA02E300752FE8 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 6LS97Q5E79;
-				INFOPLIST_FILE = Source/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -409,12 +404,10 @@
 		ACCA1D5921FA02E300752FE8 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 6LS97Q5E79;
-				INFOPLIST_FILE = Source/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -447,6 +440,13 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		B9F64BF52685F7F8000D30A5 /* SwiftDirectoryWatcher */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = SwiftDirectoryWatcher;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = ACCA1D3F21FA02E100752FE8 /* Project object */;
 }
