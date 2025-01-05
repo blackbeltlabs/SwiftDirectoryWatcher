@@ -1,9 +1,9 @@
 
 import Foundation
 
-public struct DirectoryChangeSet {
-  public var newFiles: Set<URL>
-  public var deletedFiles: Set<URL>
+public struct DirectoryChangeSet: Sendable {
+  public let newFiles: Set<URL>
+  public let deletedFiles: Set<URL>
 }
 
 public protocol DirectoryWatcherDelegate {
@@ -14,9 +14,9 @@ public extension DirectoryWatcherDelegate {
   func directoryWatcher(_ watcher: DirectoryWatcher, error: Error) {}
 }
 
-public class DirectoryWatcher {
+public class DirectoryWatcher: @unchecked Sendable {
   public var delegate: DirectoryWatcherDelegate?
-  public var url: URL
+  public let url: URL
   private var lastFiles: [URL] = []
 
   var path: String { return url.path }
